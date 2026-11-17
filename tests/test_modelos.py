@@ -18,7 +18,8 @@ def test_assunto12_nao_identificavel_6():
  assert ajustar(d,'12_curva')['p']==5
 def test_assunto13():
  m=ajustar(data('13'),'13');assert m['n']==27 and m['p']==10 and m['gl']==17
- assert np.isfinite(m['coef'].IC95_inf).all()
+ assert m["coef"].IC95_inf.isna().all()  # resultados históricos não certificam independência
+ assert np.isfinite(m["coef_nominal"].IC95_inf_hipotetico).all()
 def test_assunto14():
  d=data('14');m=ajustar(d,'14');assert m['n']==18 and m['p']==9
  assert 'C2' not in m['X'].columns
