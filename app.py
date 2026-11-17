@@ -12,6 +12,9 @@ from cnt735.modelos import ajustar, prever, matriz, anova_ortogonal, extremos
 st.set_page_config(page_title='CNT735 • Laboratório DoE',layout='wide',page_icon='🧪')
 ROOT=Path(__file__).parent
 BB=[22,24,4,6,16,18,10,12,8,26,2,20,14]
+# Escala cromática consistente entre os gráficos quantitativos de superfície.
+# A mesma paleta e os mesmos limites são compartilhados por 3D, contorno e calor.
+ESCALA_ARCO_IRIS = 'Rainbow'
 TITULOS={'11':'11 · Modelo fatorial 2²','12':'12 · Réplicas e superfície de resposta','13':'13 · Planejamento fatorial 3³','14':'14 · Fatorial misto 3×2×3 (CdS)','15':'15 · Box–Behnken × 3³','16':'16 · Blocos e confundimento'}
 @st.cache_data
 def original(k):return pd.DataFrame(json.loads((ROOT/'data'/f'assunto{k}.json').read_text()))
@@ -71,13 +74,41 @@ def interacoes(df,pares):
   st.plotly_chart(px.line(z,x=a,y='Y',color=b,markers=True,title=f'Interação observada {a}×{b} (médias marginais)'),use_container_width=True)
 
 def superficie(m,x,y,fixos=None,delta=None,passo=41):
- fixos=fixos or {};axis=np.linspace(-1,1,passo);gx,gy=np.meshgrid(axis,axis);d=pd.DataFrame({x:gx.ravel(),y:gy.ravel()})
+ fixos=fixos or {}
+ axis=np.linspace(-1,1,passo)
+ gx,gy=np.meshgrid(axis,axis)
+ d=pd.DataFrame({x:gx.ravel(),y:gy.ravel()})
  for k,v in fixos.items():d[k]=v
  z=(prever(m,d) if delta is None else prever(m,d)-prever(delta,d)).reshape(gx.shape)
+ rotulo='ΔY' if delta is not None else 'Y previsto'
+ minimo,maximo=float(np.min(z)),float(np.max(z))
+ if delta is not None:
+  # A escala permanece centrada em zero para a diferença entre modelos.
+  limite=max(abs(minimo),abs(maximo),1e-12)
+  cmin,cmax=-limite,limite
+ else:
+  # Limites comuns: a mesma cor representa o mesmo valor nos três gráficos.
+  cmin,cmax=minimo,maximo
+  if np.isclose(cmin,cmax):
+   margem=max(abs(cmin)*0.01,0.01)
+   cmin-=margem;cmax+=margem
  a,b=st.columns(2)
- with a:st.plotly_chart(go.Figure(go.Surface(x=gx,y=gy,z=z)).update_layout(title=f'Superfície 3D — {x} × {y}',scene=dict(xaxis_title=x,yaxis_title=y,zaxis_title='ΔY' if delta else 'Y previsto'),height=470),use_container_width=True)
- with b:st.plotly_chart(go.Figure(go.Contour(x=axis,y=axis,z=z,colorscale='Viridis')).update_layout(title='Mapa de contorno',xaxis_title=x,yaxis_title=y,height=470),use_container_width=True)
- st.plotly_chart(px.imshow(z,x=axis,y=axis,origin='lower',aspect='auto',labels={'x':x,'y':y,'color':'ΔY' if delta else 'Y previsto'},title='Mapa de calor'),use_container_width=True)
+ with a:
+  fig=go.Figure(go.Surface(x=gx,y=gy,z=z,colorscale=ESCALA_ARCO_IRIS,cmin=cmin,cmax=cmax,
+      colorbar=dict(title=rotulo)))
+  fig.update_layout(title=f'Superfície 3D — {x} × {y}',scene=dict(xaxis_title=x,yaxis_title=y,zaxis_title=rotulo),height=470)
+  st.plotly_chart(fig,use_container_width=True)
+ with b:
+  fig=go.Figure(go.Contour(x=axis,y=axis,z=z,colorscale=ESCALA_ARCO_IRIS,zmin=cmin,zmax=cmax,
+      colorbar=dict(title=rotulo),contours=dict(showlabels=True)))
+  fig.update_layout(title='Mapa de contorno',xaxis_title=x,yaxis_title=y,height=470)
+  st.plotly_chart(fig,use_container_width=True)
+ fig=go.Figure(go.Heatmap(x=axis,y=axis,z=z,colorscale=ESCALA_ARCO_IRIS,zmin=cmin,zmax=cmax,
+     colorbar=dict(title=rotulo),hovertemplate=f'{x}=%{{x:.3f}}<br>{y}=%{{y:.3f}}<br>{rotulo}=%{{z:.4f}}<extra></extra>'))
+ fig.update_layout(title='Mapa de calor — escala arco-íris',xaxis_title=x,yaxis_title=y,height=470)
+ st.plotly_chart(fig,use_container_width=True)
+ if delta is not None:
+  st.caption('Escala arco-íris simétrica em torno de ΔY = 0: permite comparar diferenças positivas e negativas entre os modelos.')
  st.caption(f'Malha determinística {passo}×{passo}. Máximo previsto na fatia: {z.max():.4f} em {x}={axis[np.unravel_index(z.argmax(),z.shape)[1]]:.3f}; {y}={axis[np.unravel_index(z.argmax(),z.shape)[0]]:.3f}. Mínimo previsto: {z.min():.4f}. Ótimo numérico ≠ ótimo validado.')
  return z
 

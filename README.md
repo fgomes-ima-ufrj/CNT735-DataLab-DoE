@@ -47,3 +47,12 @@ python -m pytest -q
 ## Estrutura
 
 `app.py` (interface), `cnt735/modelos.py` (motor independente), `data/assunto*.json` (dados de referência), `tests/` (verificação).
+
+## Atualização V2.1 — gráficos arco-íris
+
+Os gráficos de superfícies 3D, mapas de contorno e mapas de calor dos Assuntos 12–15
+utilizam agora a mesma escala `Rainbow` do Plotly, com limites de cor consistentes
+entre as três representações da mesma fatia. Em mapas de diferenças `ΔY`, a escala
+é centralizada em zero. A alteração é exclusivamente visual, sem modificar dados,
+coeficientes ou análises. Em publicações científicas e para acessibilidade, considere
+também uma escala perceptualmente uniforme, como `Viridis`.
