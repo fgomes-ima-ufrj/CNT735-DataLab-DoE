@@ -1,0 +1,122 @@
+[
+  {
+    "Condicao": 1,
+    "Replica": 1,
+    "C": -1.0,
+    "T": -1.0,
+    "Y": 22.0,
+    "Proveniencia": "Base 2025 original"
+  },
+  {
+    "Condicao": 1,
+    "Replica": 2,
+    "C": -1.0,
+    "T": -1.0,
+    "Y": 23.1,
+    "Proveniencia": "Base 2025 (+5%/-3%)"
+  },
+  {
+    "Condicao": 1,
+    "Replica": 3,
+    "C": -1.0,
+    "T": -1.0,
+    "Y": 21.34,
+    "Proveniencia": "Base 2025 (+5%/-3%)"
+  },
+  {
+    "Condicao": 2,
+    "Replica": 1,
+    "C": -1.0,
+    "T": 1.0,
+    "Y": 12.0,
+    "Proveniencia": "Base 2025 original"
+  },
+  {
+    "Condicao": 2,
+    "Replica": 2,
+    "C": -1.0,
+    "T": 1.0,
+    "Y": 12.6,
+    "Proveniencia": "Base 2025 (+5%/-3%)"
+  },
+  {
+    "Condicao": 2,
+    "Replica": 3,
+    "C": -1.0,
+    "T": 1.0,
+    "Y": 11.64,
+    "Proveniencia": "Base 2025 (+5%/-3%)"
+  },
+  {
+    "Condicao": 3,
+    "Replica": 1,
+    "C": 1.0,
+    "T": -1.0,
+    "Y": 18.0,
+    "Proveniencia": "Base 2025 original"
+  },
+  {
+    "Condicao": 3,
+    "Replica": 2,
+    "C": 1.0,
+    "T": -1.0,
+    "Y": 18.9,
+    "Proveniencia": "Base 2025 (+5%/-3%)"
+  },
+  {
+    "Condicao": 3,
+    "Replica": 3,
+    "C": 1.0,
+    "T": -1.0,
+    "Y": 17.46,
+    "Proveniencia": "Base 2025 (+5%/-3%)"
+  },
+  {
+    "Condicao": 4,
+    "Replica": 1,
+    "C": 1.0,
+    "T": 1.0,
+    "Y": 8.0,
+    "Proveniencia": "Base 2025 original"
+  },
+  {
+    "Condicao": 4,
+    "Replica": 2,
+    "C": 1.0,
+    "T": 1.0,
+    "Y": 8.4,
+    "Proveniencia": "Base 2025 (+5%/-3%)"
+  },
+  {
+    "Condicao": 4,
+    "Replica": 3,
+    "C": 1.0,
+    "T": 1.0,
+    "Y": 7.76,
+    "Proveniencia": "Base 2025 (+5%/-3%)"
+  },
+  {
+    "Condicao": 5,
+    "Replica": 1,
+    "C": 0.0,
+    "T": 0.0,
+    "Y": 15.0,
+    "Proveniencia": "Base 2025 original"
+  },
+  {
+    "Condicao": 5,
+    "Replica": 2,
+    "C": 0.0,
+    "T": 0.0,
+    "Y": 15.75,
+    "Proveniencia": "Base 2025 (+5%/-3%)"
+  },
+  {
+    "Condicao": 5,
+    "Replica": 3,
+    "C": 0.0,
+    "T": 0.0,
+    "Y": 14.55,
+    "Proveniencia": "Base 2025 (+5%/-3%)"
+  }
+]

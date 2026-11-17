@@ -1,0 +1,182 @@
+[
+  {
+    "ID": 1,
+    "Diametro_nm": 1.0,
+    "Concentracao_mg_ml": 0.5,
+    "Espessura_nm": 10.0,
+    "D": -1.0,
+    "C": -1,
+    "E": -1.0,
+    "Y": 7.40571
+  },
+  {
+    "ID": 2,
+    "Diametro_nm": 1.0,
+    "Concentracao_mg_ml": 0.5,
+    "Espessura_nm": 20.0,
+    "D": -1.0,
+    "C": -1,
+    "E": 0.0,
+    "Y": 7.43611
+  },
+  {
+    "ID": 3,
+    "Diametro_nm": 1.0,
+    "Concentracao_mg_ml": 0.5,
+    "Espessura_nm": 30.0,
+    "D": -1.0,
+    "C": -1,
+    "E": 1.0,
+    "Y": 7.02949
+  },
+  {
+    "ID": 4,
+    "Diametro_nm": 1.0,
+    "Concentracao_mg_ml": 1.0,
+    "Espessura_nm": 10.0,
+    "D": -1.0,
+    "C": 1,
+    "E": -1.0,
+    "Y": 8.15122
+  },
+  {
+    "ID": 5,
+    "Diametro_nm": 1.0,
+    "Concentracao_mg_ml": 1.0,
+    "Espessura_nm": 20.0,
+    "D": -1.0,
+    "C": 1,
+    "E": 0.0,
+    "Y": 7.86406
+  },
+  {
+    "ID": 6,
+    "Diametro_nm": 1.0,
+    "Concentracao_mg_ml": 1.0,
+    "Espessura_nm": 30.0,
+    "D": -1.0,
+    "C": 1,
+    "E": 1.0,
+    "Y": 6.9773
+  },
+  {
+    "ID": 7,
+    "Diametro_nm": 2.0,
+    "Concentracao_mg_ml": 0.5,
+    "Espessura_nm": 10.0,
+    "D": 0.0,
+    "C": -1,
+    "E": -1.0,
+    "Y": 7.52551
+  },
+  {
+    "ID": 8,
+    "Diametro_nm": 2.0,
+    "Concentracao_mg_ml": 0.5,
+    "Espessura_nm": 20.0,
+    "D": 0.0,
+    "C": -1,
+    "E": 0.0,
+    "Y": 7.91736
+  },
+  {
+    "ID": 9,
+    "Diametro_nm": 2.0,
+    "Concentracao_mg_ml": 0.5,
+    "Espessura_nm": 30.0,
+    "D": 0.0,
+    "C": -1,
+    "E": 1.0,
+    "Y": 7.67042
+  },
+  {
+    "ID": 10,
+    "Diametro_nm": 2.0,
+    "Concentracao_mg_ml": 1.0,
+    "Espessura_nm": 10.0,
+    "D": 0.0,
+    "C": 1,
+    "E": -1.0,
+    "Y": 8.80512
+  },
+  {
+    "ID": 11,
+    "Diametro_nm": 2.0,
+    "Concentracao_mg_ml": 1.0,
+    "Espessura_nm": 20.0,
+    "D": 0.0,
+    "C": 1,
+    "E": 0.0,
+    "Y": 8.75087
+  },
+  {
+    "ID": 12,
+    "Diametro_nm": 2.0,
+    "Concentracao_mg_ml": 1.0,
+    "Espessura_nm": 30.0,
+    "D": 0.0,
+    "C": 1,
+    "E": 1.0,
+    "Y": 8.15455
+  },
+  {
+    "ID": 13,
+    "Diametro_nm": 3.0,
+    "Concentracao_mg_ml": 0.5,
+    "Espessura_nm": 10.0,
+    "D": 1.0,
+    "C": -1,
+    "E": -1.0,
+    "Y": 7.19371
+  },
+  {
+    "ID": 14,
+    "Diametro_nm": 3.0,
+    "Concentracao_mg_ml": 0.5,
+    "Espessura_nm": 20.0,
+    "D": 1.0,
+    "C": -1,
+    "E": 0.0,
+    "Y": 7.65267
+  },
+  {
+    "ID": 15,
+    "Diametro_nm": 3.0,
+    "Concentracao_mg_ml": 0.5,
+    "Espessura_nm": 30.0,
+    "D": 1.0,
+    "C": -1,
+    "E": 1.0,
+    "Y": 7.64932
+  },
+  {
+    "ID": 16,
+    "Diametro_nm": 3.0,
+    "Concentracao_mg_ml": 1.0,
+    "Espessura_nm": 10.0,
+    "D": 1.0,
+    "C": 1,
+    "E": -1.0,
+    "Y": 9.07274
+  },
+  {
+    "ID": 17,
+    "Diametro_nm": 3.0,
+    "Concentracao_mg_ml": 1.0,
+    "Espessura_nm": 20.0,
+    "D": 1.0,
+    "C": 1,
+    "E": 0.0,
+    "Y": 9.07837
+  },
+  {
+    "ID": 18,
+    "Diametro_nm": 3.0,
+    "Concentracao_mg_ml": 1.0,
+    "Espessura_nm": 30.0,
+    "D": 1.0,
+    "C": 1,
+    "E": 1.0,
+    "Y": 8.55957
+  }
+]
